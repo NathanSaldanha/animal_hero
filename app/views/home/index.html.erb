@@ -1,9 +1,14 @@
 <div class="jumbotron">
-  <h1>Animal Hero</h1>
-  <p>
-    Sua pagina para ajudar os animais de ruas, cadastre sua <strong>ONG</strong> já!
-  </p>
-  <p>
-    <%= link_to 'Crie sua Conta', new_user_path,:class =>"btn btn-primary btn-lg" %>
-  </p>
+  <div class="page-header">
+    <div class="row" >
+      <h1 class="col-sm-6" >Animal Hero®️
+        <p>Sua pagina para ajudar a gerenciar <strong>Ongs</strong> e <strong>Clinicas veterinarias</strong> espalhadas por todo o Brasil</p>
+        <%= link_to 'Crie sua Conta', new_user_path,:class =>"btn btn-primary btn-lg" %>
+        <%= link_to 'Entrar', entrar_path, :class => 'btn btn-info btn-lg'%>
+      </h1>
+      <div>
+        <%= image_tag("/logo.png",  size: 250) %>
+      </div>
+    </div>
+  </div>
 </div>
