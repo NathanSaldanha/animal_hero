@@ -14,7 +14,6 @@
     <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:estado) %></th>
     <th><%= model_class.human_attribute_name(:logo) %></th>
-    <th><%= model_class.human_attribute_name(:created_at) %></th>
     <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
@@ -26,7 +25,7 @@
       <td><%= ongs.email %></td>
       <td><%= ongs.estado %></td>
       <td><%= image_tag ongs.logo, size: "60x65" %></td>
-      <td><%=l ongs.created_at %></td>
+
       <td>
         <%= link_to content_tag(:i,'Mostrar'),
                     ong_path(ongs), :class => 'btn btn-success btn-xs' %>
