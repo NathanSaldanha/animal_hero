@@ -1,0 +1,37 @@
+<%= form_with(model: ong, local: true) do |form| %>
+  <% if ong.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ong.errors.count, "error") %> prohibited this ong from being saved:</h2>
+
+      <ul>
+      <% ong.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logo %>
+    <%= form.text_field :logo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ong.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @ong.email %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @ong.estado %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @ong.logo %>
+</p>
+
+<%= link_to 'Edit', edit_ong_path(@ong) %> |
+<%= link_to 'Back', ongs_path %>

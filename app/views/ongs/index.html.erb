@@ -1,0 +1,44 @@
+<%- model_class = Ong -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_ong_path,
+                :class => 'btn btn-primary' %>
+  </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:nome) %></th>
+    <th><%= model_class.human_attribute_name(:email) %></th>
+    <th><%= model_class.human_attribute_name(:estado) %></th>
+    <th><%= model_class.human_attribute_name(:logo) %></th>
+    <th><%= model_class.human_attribute_name(:created_at) %></th>
+    <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @ongs.each do |ongs| %>
+    <tr>
+      <td><%= link_to ongs.id, ong_path(ongs) %></td>
+      <td><%= ongs.nome %></td>
+      <td><%= ongs.email %></td>
+      <td><%= ongs.estado %></td>
+      <td><%= image_tag ongs.logo, size: "60x65" %></td>
+      <td><%=l ongs.created_at %></td>
+      <td>
+        <%= link_to content_tag(:i,'Mostrar'),
+                    ong_path(ongs), :class => 'btn btn-success btn-xs' %>
+        <%= link_to content_tag(:i,'Editar', class: ["fas", "fa-edit"]),
+                    edit_ong_path(ongs), :class => 'btn btn-primary btn-xs' %>
+        <%= link_to content_tag(:i,'Excluir', class: ["fas", "fa-trash"]),
+                    ong_path(ongs),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-xs btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
