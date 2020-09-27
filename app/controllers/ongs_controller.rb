@@ -28,7 +28,7 @@ class OngsController < ApplicationController
 
     respond_to do |format|
       if @ong.save
-        format.html { redirect_to @ong, notice: 'Ong was successfully created.' }
+        format.html { redirect_to @ong, notice: 'Ong criada com sucesso' }
         format.json { render :show, status: :created, location: @ong }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class OngsController < ApplicationController
   def update
     respond_to do |format|
       if @ong.update(ong_params)
-        format.html { redirect_to @ong, notice: 'Ong was successfully updated.' }
+        format.html { redirect_to @ong, notice: 'Ong atualizada com sucesso' }
         format.json { render :show, status: :ok, location: @ong }
       else
         format.html { render :edit }

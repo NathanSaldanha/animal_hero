@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :ongs
+  resources :users, only: [:new, :create]
   get 'home/index'
 
   root to:"home#index"
