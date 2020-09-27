@@ -1,24 +1,32 @@
-# README
+## Projeto Animal Hero - README
+## Descrição
+<p>
+  É um sistema Web que ajudará as Ongs e hospitais veterinários espalhadas por todo o Brasil a gerenciar a quantidade de animais presentes em suas localidades
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Stacks
+    rails 5.2.4
+    ruby 2.5.0
+    sqlite3
 
-Things you may want to cover:
+## Ambiente de Desenvolvimento.
+    rvm install 2.5.0   
+    rvm use 2.5.0
+    gem install bundler
+    bundle install 
+    
+## Sugestões de IDEs
 
-* Ruby version
+Ruby Mine #(grátis para [estudantes!](https://www.jetbrains.com/community/education/#students)):
+https://www.jetbrains.com/pt-br/ruby/download/#section=mac
 
-* System dependencies
+Sublime:
+https://www.sublimetext.com/  
 
-* Configuration
+### Rodando o projeto
+    rails server
+    
+Usuário para acesso ao sistema:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    usuario: nmariano85@gmail.com
+    senha: 12345678
