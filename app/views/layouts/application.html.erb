@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AnimalHero</title>
+    <title>Animal Hero</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <%= render 'layouts/header' %>
+
+  <div class="container">
     <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+
   </body>
 </html>
