@@ -25,6 +25,7 @@ class OngsController < ApplicationController
   # POST /ongs.json
   def create
     @ong = Ong.new(ong_params)
+    @ong.user_id = session[:user_id]
 
     respond_to do |format|
       if @ong.save

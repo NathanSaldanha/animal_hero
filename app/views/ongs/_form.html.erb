@@ -1,3 +1,4 @@
+
 <%= form_with(model: ong, local: true) do |form| %>
   <% if ong.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+  <% @ong = session[:user_id] %>
   <div class="field">
     <%= form.label :nome %>
     <%= form.text_field :nome %>
@@ -29,11 +30,6 @@
   <div class="field">
     <%= form.label :logo %>
     <%= form.text_field :logo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id%>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">
