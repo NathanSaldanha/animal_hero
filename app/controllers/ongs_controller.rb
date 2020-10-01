@@ -4,7 +4,11 @@ class OngsController < ApplicationController
   # GET /ongs
   # GET /ongs.json
   def index
-    @ongs = Ong.all
+    if params[:id].nil?
+      @ongs = Ong.all
+    else
+      @ongs = Ong.where(id: params[:id])
+    end
   end
 
   # GET /ongs/1
