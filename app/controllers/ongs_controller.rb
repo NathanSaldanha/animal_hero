@@ -4,7 +4,17 @@ class OngsController < ApplicationController
   # GET /ongs
   # GET /ongs.json
   def index
+<<<<<<< Updated upstream
     @ongs = Ong.all
+=======
+    if params[:search].nil?
+      @ongs = Ong.all
+
+    else
+      @ongs = Ong.where('email like ? OR nome like ?',
+        "%#{params[:search]}%", "%#{params[:search]}%")
+    end
+>>>>>>> Stashed changes
   end
 
   # GET /ongs/1
@@ -71,4 +81,6 @@ class OngsController < ApplicationController
     def ong_params
       params.require(:ong).permit(:nome, :email, :estado, :logo)
     end
+
+
 end

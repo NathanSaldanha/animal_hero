@@ -1,0 +1,78 @@
+<%= form_with(model: animal, local: true) do |form| %>
+  <% if animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :raca %>
+    <%= form.text_field :raca, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :especie %>
+    <%= form.text_field :especie, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.text_field :sexo, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.text_field :peso, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :data_nascimento %>
+    <%= form.text_field :data_nascimento, class: 'form-control'%>
+  </div>
+    </div>
+
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :situacao %>
+    <%= form.text_field :situacao, class: 'form-control'%>
+  </div>
+    </div>
+
+<div class="form-group">
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url , class: 'form-control'%>
+  </div>
+    </div>
+
+<div class="form-group">
+  <div class="actions" >
+    <%= form.submit 'Cadastrar', class: 'btn btn-primary' %>
+        <%= link_to 'voltar', ongs_path,:class => "btn btn-danger"%>
+  </div>
+    </div>
+
+<% end %>
+
+

@@ -1,3 +1,27 @@
+<<<<<<< Updated upstream
+=======
+<%= form_tag ongs_path, method: 'get' do%>
+  <div class="row">
+    <div class="form-group col-sm-2">
+      <%#= label_tag :nome %>
+      <%#= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 
+      'Selecione' %>
+  </div>
+
+
+  <div class="row">
+        <div class="form-group col-sm-12">
+      <%= form_with(url: "/search", method: "get") do %>
+          <%= text_field_tag 'search',nil,placeholder: 'Pesquisar por nome' %>
+    <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+      Pesquisar
+      <%end %>
+        <%end%>
+  </div>
+    </div>
+  </div>
+<%end %>
+>>>>>>> Stashed changes
 <%- model_class = Ong -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
@@ -14,17 +38,20 @@
     <th><%= model_class.human_attribute_name(:email) %></th>
     <th><%= model_class.human_attribute_name(:estado) %></th>
     <th><%= model_class.human_attribute_name(:logo) %></th>
+    
     <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
   </tr>
   </thead>
   <tbody>
+
+  
   <% @ongs.each do |ongs| %>
     <tr>
       <td><%= link_to ongs.id, ong_path(ongs) %></td>
       <td><%= ongs.nome %></td>
       <td><%= ongs.email %></td>
       <td><%= ongs.estado %></td>
-      <td><%= image_tag ongs.logo, size: "60x65" %></td>
+      <td><%= image_tag ongs.logo, size: "60x65" %></td>  
 
       <td>
         <%= link_to content_tag(:i,'Mostrar'),
@@ -41,3 +68,5 @@
   <% end %>
   </tbody>
 </table>
+
+

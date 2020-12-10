@@ -1,0 +1,80 @@
+<%= form_tag animals_path, method: 'get' do%>
+  <div class="row">
+    <div class="form-group col-sm-2">
+      <%#= label_tag :nome %>
+      <%#= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 
+      'Selecione' %>
+  </div>
+  
+
+  <div class="row">
+        <div class="form-group col-sm-12">
+      <%= form_with(url: "/search", method: "get") do %>
+          <%= text_field_tag 'search',nil,placeholder: 'Pesquisar por nome' %>
+    <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+      Pesquisar
+      <%end %>
+        <%end%>
+  </div>
+    </div>
+  </div>
+<%end %>
+
+
+<h1>Animais</h1>
+
+<div class="page-header">
+
+  <%= link_to 'Cadastrar novo animal', new_animal_path ,:class => 'btn btn-primary'%>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+      <th>Nome</th>
+      <th>Raca</th>
+      <th>Especie</th>
+      <th>Sexo</th>
+      <th>Peso</th>
+      <th>Data de nascimento</th>
+      <th>Situação</th>
+      <th>Foto</th>
+      <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <% @animals.each do |animals| %>
+       <tr>
+        <td><%= animals.nome %></td>
+        <td><%= animals.raca %></td>
+        <td><%= animals.especie %></td>
+        <td><%= animals.sexo %></td>
+        <td><%= animals.peso %></td>
+        <td><%= animals.data_nascimento %></td>
+        <td><%= animals.situacao %></td>
+        <td><%=image_tag animals.img_url , size: "60x65"%></td>
+
+
+      <td>
+        <%= link_to content_tag(:i,'Mostrar'),
+                    animal_path(animals), :class => 'btn btn-success btn-xs' %>
+        <%= link_to content_tag(:i,'Editar', class: ["fas", "fa-edit"]),
+                    edit_animal_path(animals), :class => 'btn btn-primary btn-xs' %>
+        <%= link_to content_tag(:i,'Excluir', class: ["fas", "fa-trash"]),  
+                    animal_path(animals),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-xs btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+

@@ -11,27 +11,40 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class: 'form-control'  %>
+  </div>
   </div>
 
+<div class="form-group">
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
   </div>
 
+<div class="form-group">
   <div class="field">
     <%= form.label :estado %>
-    <%= form.text_field :estado %>
+    <%= form.text_field :estado, class: 'form-control' %>
+  </div>
   </div>
 
+<div class="form-group">
   <div class="field">
     <%= form.label :logo %>
-    <%= form.text_field :logo %>
+    <%= form.text_field :logo , class: 'form-control' %>
+  </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+<div class="form-group">
+  <div class="actions" >
+    <%= form.submit 'Cadastrar', class: 'btn btn-primary' %>
+        <%= link_to 'voltar', ongs_path,:class => "btn btn-danger"%>
+  </div>
+
   </div>
 <% end %>

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_041742) do
+ActiveRecord::Schema.define(version: 2020_12_08_175416) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string "nome"
+    t.string "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "raca"
+    t.string "especie"
+    t.string "sexo"
+    t.string "peso"
+    t.string "data_nascimento"
+    t.string "situacao"
+  end
 
   create_table "ongs", force: :cascade do |t|
     t.string "nome"
@@ -27,6 +40,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_041742) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ongs_id_id"
+    t.index ["ongs_id_id"], name: "index_users_on_ongs_id_id"
   end
 
 end
