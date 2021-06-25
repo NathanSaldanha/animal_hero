@@ -1,3 +1,19 @@
+<%= form_tag ongs_path, method: 'get' do%>
+  <div class="row">
+    <div class="form-group col-sm-2">
+      <%= label_tag :nome %>
+      <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 'Selecione' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-sm-3">
+      <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+      Pesquisar
+      <%end %>
+    </div>
+  </div>
+<%end %>
 <%- model_class = Ong -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>

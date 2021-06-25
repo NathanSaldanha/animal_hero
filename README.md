@@ -3,7 +3,6 @@
 <p>
   É um sistema Web que ajudará as Ongs e hospitais veterinários espalhadas por todo o Brasil a gerenciar a quantidade de animais presentes em suas localidades
 </p>
-
 ## Stacks
     rails 5.2.4
     ruby 2.5.0
