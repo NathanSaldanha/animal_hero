@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  species: 1
+  birth_date: 2021-06-26
+  ong: one
+  user: one
+
+two:
+  name: MyString
+  species: 1
+  birth_date: 2021-06-26
+  ong: two
+  user: two
