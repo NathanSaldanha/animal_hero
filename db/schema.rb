@@ -47,11 +47,9 @@ ActiveRecord::Schema.define(version: 2021_06_26_224654) do
     t.integer "species", default: 0
     t.date "birth_date"
     t.integer "ong_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ong_id"], name: "index_pets_on_ong_id"
-    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

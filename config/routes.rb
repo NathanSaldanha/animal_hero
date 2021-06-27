@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ongs
+  resources :ongs, :pets
   resources :users, only: [:new, :create, :show]
   get 'home/index'
   get 'entrar', to:'sessions#new'

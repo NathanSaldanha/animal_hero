@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pet.name %>
+</p>
+
+<p>
+  <strong>Specie:</strong>
+  <%= @pet.species %>
+</p>
+
+<p>
+  <strong>Aniversário:</strong>
+  <%= @pet.birth_date.strftime('%d:%d:%Y') %>
+</p>
+
+<p>
+  <strong>Imagem do Pet:</strong>
+  <%= image_tag @pet.avatar %>
+</p>
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %>

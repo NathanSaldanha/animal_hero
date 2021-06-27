@@ -1,0 +1,41 @@
+<%- model_class = Pet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_pet_path,
+                :class => 'btn btn-primary' %>
+  </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:species) %></th>
+    <th><%= model_class.human_attribute_name(:birth_date) %></th>
+    <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @pets.each do |pets| %>
+    <tr>
+      <td><%= link_to pets.id, pet_path(pets) %></td>
+      <td><%= pets.name %></td>
+      <td><%= pets.species %></td>
+      <td><%= pets.birth_date %></td>
+      <td><%= link_to (image_tag pets.avatar, size: "60x65"), pet_path(pets) %></td>
+
+      <td>
+        <%= link_to content_tag(:i,'Mostrar'),
+                    pet_path(pets), :class => 'btn btn-success btn-xs' %>
+        <%= link_to content_tag(:i,'Editar', class: ["fas", "fa-edit"]),
+                    edit_pet_path(pets), :class => 'btn btn-primary btn-xs' %>
+        <%= link_to content_tag(:i,'Excluir', class: ["fas", "fa-trash"]),
+                    pet_path(pets),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-xs btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
