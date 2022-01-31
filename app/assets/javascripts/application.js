@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require jquery.mask
 //= require bootstrap-sprockets
 //= require notify
