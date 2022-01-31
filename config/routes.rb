@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :animais
   resources :ongs
   resources :users, only: [:new, :create, :show, :edit, :update]
   get 'home/index'

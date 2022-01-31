@@ -1,0 +1,63 @@
+<%= form_with(model: animal, local: true) do |form| %>
+  <% if animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+
+      <ul>
+      <% animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :raca, "Raça" %>
+    <%= form.text_field :raca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :especie, "Espécie" %>
+    <%= form.text_field :especie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.select :sexo, options_for_select(@sexo), prompt: "--Selecione uma opção--" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.number_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_nascimento %>
+    <%= form.text_field :data_nascimento, class: 'form-control date', required: true  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situacao, "Situação" %>
+    <%= form.select :situacao, options_for_select(@situacao), prompt: "--Selecione uma opção--" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ong_id %>
+    <%= form.select :ong_id, options_for_select(@ongs), prompt: "--Selecione uma opção--" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function(){
+    $('.date').mask('00/00/0000');
+  });
+</script>  

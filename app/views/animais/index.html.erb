@@ -1,0 +1,71 @@
+<%= form_tag ongs_path, method: 'get' do%>
+  <div class="row">
+    <div class="form-group col-sm-2">
+      <%= label_tag :nome %>
+      <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 'Selecione' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-sm-3">
+      <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+      Pesquisar
+      <%end %>
+    </div>
+  </div>
+<%end %>
+<%- model_class = Animal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_animal_path,
+                :class => 'btn btn-primary' %>
+  </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:nome) %></th>
+    <th><%= model_class.human_attribute_name(:raca) %></th>
+    <th><%= model_class.human_attribute_name(:especie) %></th>
+    <th><%= model_class.human_attribute_name(:sexo) %></th>
+    <th><%= model_class.human_attribute_name(:peso) %></th>
+    <th><%= model_class.human_attribute_name(:data_nascimento) %></th>
+    <th><%= model_class.human_attribute_name(:situacao) %></th>
+    <th><%= model_class.human_attribute_name(:ong) %></th>
+    <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @animais.each do |animal| %>
+    <tr>
+      <td><%= animal.id %></td>
+      <td><%= animal.nome %></td>
+      <td><%= animal.raca %></td>
+      <td><%= animal.especie %></td>
+      <td><%= animal.sexo %></td>
+      <td><%= animal.peso %></td>
+      <td>
+        <% if animal.data_nascimento.present? %>
+          <%= animal.data_nascimento.strftime('%d/%m/%Y') %>
+        <% end %>
+      </td>  
+      <td><%= animal.situacao %></td>
+      <td><%= animal.ong.nome %></td>
+
+      <td>
+        <%= link_to content_tag(:i,'Mostrar'),
+                    animal_path(animal), :class => 'btn btn-success btn-xs' %>
+        <%= link_to content_tag(:i,'Editar', class: ["fas", "fa-edit"]),
+                    edit_animal_path(animal), :class => 'btn btn-primary btn-xs' %>
+        <%= link_to content_tag(:i,'Excluir', class: ["fas", "fa-trash"]),
+                    animal_path(animal),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-xs btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
