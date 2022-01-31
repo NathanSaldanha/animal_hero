@@ -1,6 +1,9 @@
-<h1>Editing Animal</h1>
-
-<%= render 'form', animal: @animal %>
-
-<%= link_to 'Show', @animal %> |
-<%= link_to 'Back', animais_path %>
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h3 class="panel-title">Edição de Animais</h3>
+   </div>
+   
+   <div class="panel-body">
+      <%= render 'form', animal: @animal %>
+   </div>
+</div>

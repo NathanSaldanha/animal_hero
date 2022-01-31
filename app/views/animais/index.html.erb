@@ -45,7 +45,7 @@
       <td><%= animal.raca %></td>
       <td><%= animal.especie %></td>
       <td><%= animal.sexo %></td>
-      <td><%= animal.peso %></td>
+      <td><%= "#{animal.peso} kg" %></td>
       <td>
         <% if animal.data_nascimento.present? %>
           <%= animal.data_nascimento.strftime('%d/%m/%Y') %>

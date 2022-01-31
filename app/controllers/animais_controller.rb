@@ -13,6 +13,7 @@ class AnimaisController < ApplicationController
   # GET /animais/new
   def new
     @animal = Animal.new
+    @botao = "Salvar"
   end
 
   # GET /animais/1/edit
@@ -25,7 +26,7 @@ class AnimaisController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to animal_url(@animal), notice: "Animal was successfully created." }
+        format.html { redirect_to animal_url(@animal), notice: "Animal cadastrado com sucesso." }
         format.json { render :show, status: :created, location: @animal }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class AnimaisController < ApplicationController
   def update
     respond_to do |format|
       if @animal.update(animal_params)
-        format.html { redirect_to animal_url(@animal), notice: "Animal was successfully updated." }
+        format.html { redirect_to animal_url(@animal), notice: "Animal atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @animal }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class AnimaisController < ApplicationController
     @animal.destroy
 
     respond_to do |format|
-      format.html { redirect_to animais_url, notice: "Animal was successfully destroyed." }
+      format.html { redirect_to animais_url, notice: "Animal apagado com sucesso." }
       format.json { head :no_content }
     end
   end
@@ -62,6 +63,7 @@ class AnimaisController < ApplicationController
     def set_animal
       if params[:action] != 'new'
         @animal = Animal.find(params[:id])
+        @botao = "Atualizar"
       end  
       @situacao = [['Abandonado','Abandonado'], ['Propriedade','Propriedade']]
       @sexo = [['Masculino','Masculino'], ['Feminino','Feminino']]
