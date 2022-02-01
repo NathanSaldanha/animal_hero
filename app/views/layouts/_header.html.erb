@@ -19,6 +19,11 @@
             <%= link_to 'Nova Conta', new_user_path %>
           </li>
         <%end %>
+        <%if user_signed_in?%>
+          <li>
+            <%= link_to 'Lista de Animais',animais_path %>
+          </li>
+        <% end %>  
 
       </ul>
 
