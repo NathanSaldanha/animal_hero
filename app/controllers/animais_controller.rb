@@ -3,7 +3,7 @@ class AnimaisController < ApplicationController
 
   # GET /animais or /animais.json
   def index
-    @animais = Animal.all
+    @animais = Animal.get_animais(params)
   end
 
   # GET /animais/1 or /animais/1.json
