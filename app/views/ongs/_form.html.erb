@@ -1,7 +1,7 @@
 <%= form_with(model: ong, local: true) do |form| %>
   <% if ong.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ong.errors.count, "error") %> prohibited this ong from being saved:</h2>
+      <h2><%= pluralize(ong.errors.count, "error") %>Essa ONG não pôde ser salva</h2>
 
       <ul>
       <% ong.errors.full_messages.each do |message| %>
