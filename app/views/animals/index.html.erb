@@ -10,17 +10,17 @@
       </h1>
     </div>
 
-    <table class="table table-hover">
-      <thead>
+    <table class="table table-striped table-bordered table-hover-sm">
+      <thead class="thead-light">
       <tr>
         <th><%= model_class.human_attribute_name(:id) %></th>
         <th><%= model_class.human_attribute_name(:nome) %></th>
-        <th><%= model_class.human_attribute_name(:raca) %></th>
-        <th><%= model_class.human_attribute_name(:especie) %></th>
+        <th><%= model_class.human_attribute_name(:raça) %></th>
+        <th><%= model_class.human_attribute_name(:espécie) %></th>
         <th><%= model_class.human_attribute_name(:sexo) %></th>
         <th><%= model_class.human_attribute_name(:peso) %></th>
-        <th><%= model_class.human_attribute_name(:data_nascimento) %></th>
-        <th><%= model_class.human_attribute_name(:situacao) %></th>
+        <th><%= model_class.human_attribute_name(:data_de_nascimento) %></th>
+        <th><%= model_class.human_attribute_name(:situação) %></th>
         <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
       </thead>
