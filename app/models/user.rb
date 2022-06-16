@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many :ongs
   has_secure_password
   before_save :email_downcase
 
