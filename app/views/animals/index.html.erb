@@ -1,0 +1,54 @@
+<%= form_tag(animals_path, method: 'get') do %>
+    <%end %>
+    
+    <%- model_class = Animal -%>
+    <div class="page-header">
+      <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+        <%= link_to t('.new', :default => t("helpers.links.new")),
+                    new_animal_path,
+                    :class => 'btn btn-info' %>
+      </h1>
+    </div>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:nome) %></th>
+        <th><%= model_class.human_attribute_name(:raca) %></th>
+        <th><%= model_class.human_attribute_name(:especie) %></th>
+        <th><%= model_class.human_attribute_name(:sexo) %></th>
+        <th><%= model_class.human_attribute_name(:peso) %></th>
+        <th><%= model_class.human_attribute_name(:data_nascimento) %></th>
+        <th><%= model_class.human_attribute_name(:situacao) %></th>
+        <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @animals.each do |animals| %>
+        <tr>
+          <td><%= link_to animals.id, animal_path(animals) %></td>
+          <td><%= animals.nome %></td>
+          <td><%= animals.raca %></td>
+          <td><%= animals.especie %></td>
+          <td><%= animals.sexo %></td>
+          <td><%= animals.peso %></td>
+          <td><%= animals.data_nascimento %></td>
+          <td><%= animals.situacao%></td>
+
+
+          <td>
+            <%= link_to content_tag(:i,'Mostrar'),
+                        animal_path(animals), :class => 'btn btn-success btn-xs' %>
+            <%= link_to content_tag(:i,'Editar', class: ["fas", "fa-edit"]),
+                        edit_animal_path(animals), :class => 'btn btn-primary btn-xs' %>
+            <%= link_to content_tag(:i,'Excluir', class: ["fas", "fa-trash"]),
+                        animal_path(animals),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>

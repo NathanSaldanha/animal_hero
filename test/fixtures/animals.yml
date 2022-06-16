@@ -1,0 +1,17 @@
+one:
+  nome: MyString
+  raca: MyString
+  especie: MyString
+  sexo: MyString
+  peso: 1.5
+  data_nascimento: 2020-10-02
+  situacao: MyString
+
+two:
+  nome: MyString
+  raca: MyString
+  especie: MyString
+  sexo: MyString
+  peso: 1.5
+  data_nascimento: 2020-10-02
+  situacao: MyString

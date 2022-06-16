@@ -1,0 +1,57 @@
+<%= form_with(model: animal, local: true) do |form| %>
+  <% if animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(animal.errors.count, "error") %> Animal não pôde ser salvo:</h2>
+
+      <ul>
+      <% animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :raca %>
+    <%= form.text_field :raca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :especie %>
+    <%= form.text_field :especie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.select :sexo, ['Femea', 'Macho'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_nascimento%>
+    <%= form.date_select :data_nascimento, order: [:day, :month, :year], :use_month_numbers => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situacao %>
+    <%= form.text_field :situacao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ong_id%>
+    <%= form.select("ong_id", @ong_options , {include_blank:"Selecione..."}) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

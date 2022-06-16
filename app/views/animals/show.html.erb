@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @animal.nome %>
+</p>
+
+<p>
+  <strong>Raça:</strong>
+  <%= @animal.raca %>
+</p>
+
+<p>
+  <strong>Especie:</strong>
+  <%= @animal.especie %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @animal.sexo %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @animal.peso %>
+</p>
+
+<p>
+  <strong>Data de nascimento:</strong>
+  <%= @animal.data_nascimento %>
+</p>
+
+<p>
+  <strong>Situação:</strong>
+  <%= @animal.situacao %>
+</p>
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>
