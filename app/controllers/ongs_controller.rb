@@ -61,7 +61,7 @@ class OngsController < ApplicationController
   def destroy
     @ong.destroy
     respond_to do |format|
-      format.html { redirect_to ongs_url, notice: 'Ong was successfully destroyed.' }
+      format.html { redirect_to ongs_url, notice: 'Ong foi retirada com sucesso' }
       format.json { head :no_content }
     end
   end
