@@ -10,43 +10,43 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<form>
+  <div class="form-group col-md-6">
     <%= form.label :nome %>
     <%= form.text_field :nome %>
   </div>
 
-  <div class="field">
-    <%= form.label :raca %>
+  <div class="form-group col-md-6">
+    <%= form.label :raça %>
     <%= form.text_field :raca %>
   </div>
 
-  <div class="field">
-    <%= form.label :especie %>
+  <div class="form-group col-md-6">
+    <%= form.label :espécie %>
     <%= form.text_field :especie %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :sexo %>
-    <%= form.select :sexo, ['Femea', 'Macho'] %>
+    <%= form.select :sexo, ['Fêmea', 'Macho'] %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :peso %>
     <%= form.text_field :peso %>
   </div>
 
-  <div class="field">
-    <%= form.label :data_nascimento%>
+  <div class="form-group col-md-6">
+    <%= form.label :data_de_nascimento%>
     <%= form.date_select :data_nascimento, order: [:day, :month, :year], :use_month_numbers => true %>
   </div>
 
-  <div class="field">
-    <%= form.label :situacao %>
+  <div class="form-group col-md-6">
+    <%= form.label :situação %>
     <%= form.text_field :situacao %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :ong_id%>
     <%= form.select("ong_id", @ong_options , {include_blank:"Selecione..."}) %>
   </div>
@@ -54,4 +54,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  </form>
 <% end %>

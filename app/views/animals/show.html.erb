@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<form>
 <p>
   <strong>Nome:</strong>
   <%= @animal.nome %>
@@ -34,6 +35,8 @@
   <strong>Situação:</strong>
   <%= @animal.situacao %>
 </p>
+
+</form>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>
