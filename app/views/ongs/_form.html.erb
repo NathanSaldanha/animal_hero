@@ -11,27 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
+  <div class="row">
+    <div class="col-xs-4">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, class:"form-control"%>
+    </div>
+
+    <div class="col-xs-4">
+      <%= form.label :email %>
+      <%= form.text_field :email, class:"form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="row">
+    <div class="col-xs-4">
+      <%= form.label :estado %>
+      <%= form.text_field :estado, class:"form-control" %>
+    </div>
+
+    <div class="col-xs-4">
+      <%= form.label :logo %>
+      <%= form.text_field :logo, class:"form-control" %><br>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado %>
-  </div>
-
-  <div class="field">
-    <%= form.label :logo %>
-    <%= form.text_field :logo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit "Criar Ong" , class:"btn btn-primary btn-lg active" %>
+    </div>
   </div>
 <% end %>
