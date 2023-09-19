@@ -1,0 +1,2 @@
+class ClinicasVeterinarias < ApplicationRecord
+end

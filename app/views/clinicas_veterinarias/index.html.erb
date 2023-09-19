@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clinicas Veterinarias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>Endereco</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clinicas_veterinarias.each do |clinicas_veterinaria| %>
+      <tr>
+        <td><%= clinicas_veterinaria.nome %></td>
+        <td><%= clinicas_veterinaria.telefone %></td>
+        <td><%= clinicas_veterinaria.email %></td>
+        <td><%= clinicas_veterinaria.endereco %></td>
+        <td><%= link_to 'Show', clinicas_veterinaria %></td>
+        <td><%= link_to 'Edit', edit_clinicas_veterinaria_path(clinicas_veterinaria) %></td>
+        <td><%= link_to 'Destroy', clinicas_veterinaria, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clinicas Veterinaria', new_clinicas_veterinaria_path %>
