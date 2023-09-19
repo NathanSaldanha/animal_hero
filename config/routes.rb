@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :clinicas_veterinarias
+  resources :clinicas_veterinaria
+  resources :clinicas_veterinaris
+  resources :estados
   resources :ongs
   resources :users, only: [:new, :create, :show]
   get 'home/index'
