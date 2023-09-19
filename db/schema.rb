@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_041742) do
+ActiveRecord::Schema.define(version: 2023_09_19_123225) do
+
+  create_table "clinicas_veterinarias", force: :cascade do |t|
+    t.string "nome"
+    t.string "telefone"
+    t.string "email"
+    t.string "endereco"
+    t.string "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "estado_id"
+    t.index ["estado_id"], name: "index_clinicas_veterinarias_on_estado_id"
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.string "nome"
+    t.string "abreviacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ongs", force: :cascade do |t|
     t.string "nome"
@@ -19,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_041742) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "estado_id"
+    t.index ["estado_id"], name: "index_ongs_on_estado_id"
   end
 
   create_table "users", force: :cascade do |t|
