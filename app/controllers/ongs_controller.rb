@@ -19,10 +19,13 @@ class OngsController < ApplicationController
   # GET /ongs/new
   def new
     @ong = Ong.new
+    @estados = Estado.all
   end
 
   # GET /ongs/1/edit
   def edit
+    @estados = Estado.all
+    @ong = Ong.find(params[:id])
   end
 
   # POST /ongs
@@ -73,6 +76,6 @@ class OngsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ong_params
-      params.require(:ong).permit(:nome, :email, :estado, :logo)
+      params.require(:ong).permit(:nome, :email, :estado_id, :logo)
     end
 end

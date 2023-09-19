@@ -1,3 +1,5 @@
+<%# <% @estados ||= [] %> 
+
 <%= form_with(model: ong, local: true) do |form| %>
   <% if ong.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +13,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+ <div class="form-group">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class: 'form-control', :required => true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control', :required => true %>
   </div>
 
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :logo %>
-    <%= form.text_field :logo %>
+    <%= form.text_field :logo, class: 'form-control', :required => true %>
+  </div>
+
+   <div class="form-group">
+      <%# <%= form.label :estado_id, 'Estado' %>
+      <%# <%= form.text_field :estado, class: 'form-control' %>
+      <%= form.label :estado_id, 'Estado' %> 
+      <%= form.collection_select(:estado_id, @estados || [], :id, :nome, prompt: 'Selecione um estado') %>
+
   </div>
 
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit "Criar Ong", class: 'btn btn-primary'%>
+  </div>  
 <% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @clinicas_veterinaria.nome %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @clinicas_veterinaria.telefone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @clinicas_veterinaria.email %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @clinicas_veterinaria.endereco %>
+</p>
+
+<%= link_to 'Edit', edit_clinicas_veterinaria_path(@clinicas_veterinaria) %> |
+<%= link_to 'Back', clinicas_veterinarias_index_path %>
